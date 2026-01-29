@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rocket Dash</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./istockphoto-1360257728-612x612-removebg-preview.png" type="image/x-icon">
+</head>
+
+<body>
+    <div id="ui">
+        <div id="score">0</div>
+        <div id="status-container-bottom">
+            <div id="shield-ui" class="status-box hidden">🛡️ [Q] SHIELD</div>
+            <div id="warp-ui" class="status-box hidden">⚡ [E] WARP</div>
+        </div>
+    </div>
+
+    <div id="main-menu" class="overlay">
+        <div class="pixel-box">
+            <h1 class="title-text" id="menu-title">ROCKET DASH</h1>
+            <div id="high-score-text">BEST: <span id="high-score-val">0</span></div>
+
+            <div class="button-group">
+                <button id="resume-btn" class="hidden" onclick="resumeGame()">RESUME</button>
+                <button id="start-btn" onclick="startNewGame()">START MISSION</button>
+                <button id="back-btn" class="hidden" onclick="backToStart()">MAIN MENU</button>
+                <button id="skin-btn" onclick="toggleSkins()">SKINS</button>
+            </div>
+
+            <div id="lang-selector">
+                <span class="lang-opt" onclick="setLanguage('en')">EN</span> |
+                <span class="lang-opt" onclick="setLanguage('az')">AZ</span> |
+                <span class="lang-opt" onclick="setLanguage('tr')">TR</span>
+            </div>
+
+            <div id="skin-panel" class="hidden">
+                <div class="color-options">
+                    <div class="color-dot" style="background:#ffffff" onclick="setSkin('#ffffff')"></div>
+                    <div class="color-dot" style="background:#00ffff" onclick="setSkin('#00ffff')"></div>
+                    <div class="color-dot" style="background:#ff00ff" onclick="setSkin('#ff00ff')"></div>
+                    <div class="color-dot" style="background:#ffff00" onclick="setSkin('#ffff00')"></div>
+                    <div class="color-dot" style="background:#00ff00" onclick="setSkin('#00ff00')"></div>
+                </div>
+            </div>
+            <div class="settings-row" id="hint-text">TAP ANYWHERE TO JUMP</div>
+        </div>
+    </div>
+
+    <canvas id="canvas"></canvas>
+    <script src="./script.js"></script>
+</body>
+
+</html>
